@@ -15,8 +15,8 @@ body {
     height: 100%;
     width: 100%;           
     display: grid;    
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: minmax(225px, 1fr) 4fr;
+    grid-template-rows: minmax(3em, 1fr) 5fr minmax(3em, 1fr);
     padding: 0.25em;
     gap: 0.25em;       
 }
@@ -45,14 +45,19 @@ body {
     font-weight: 700;       
 }
 
-#content {
+#add-book-btn {
+    border: 2px solid black;
+}
+
+#content {         
     background: linear-gradient(to bottom, rgb(138,43,226) 20%, rgb(0,0,255) 100%);
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr 1fr;
-    padding: 0.25%;    
+    grid-template-rows: 50% 50%;    
+    grid-auto-rows: 50%;   
+    overflow: auto;        
 }
 
 #footer {
@@ -109,4 +114,47 @@ input:focus {
 
 .radio-btn-container label {
     font-size: 1.3em;        
+}
+
+.card {
+    font-size: 1.2em;
+    margin: 0.25em;
+    box-sizing: border-box;
+    border: 4px inset #550b9b;
+    border-radius: 4px;   
+    display: flex;
+    flex-direction: column;    
+    padding: 8%;
+    min-width: 180px;
+    text-wrap: nowrap;
+    overflow: auto;   
+}
+
+.card > p {
+    margin: 0;
+    padding: 0;
+    color: white;            
+}
+
+.card-title,
+.card-author,
+.card-pages,
+.card-read-no,
+.card-read-yes {
+    flex-grow: 1;
+}
+
+.card .card-read-no {
+    color: red;
+}
+
+.card .card-read-yes {
+    color: green;
+    font-weight: 700;
+}
+
+.card > button {
+    margin-top: 0.75em;
+    padding: 0.3em;
+    border: 2px solid black;
 }
