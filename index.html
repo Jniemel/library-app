@@ -7,7 +7,42 @@
     <title>library-app</title>
 </head>
 <body>
-    <button id="add-book-btn">Add book</button>
+    <div id="main-container">
+        <div id="header">
+            <div id="header-text">LIBRARY-APP</div>
+        </div>
+        <div id="sidebar">
+            <form id="book-form">            
+                <div class="field">
+                    <label for="book-title">Title:</label>
+                    <input type="text" id="book-title" name="book-title" placeholder="Title of the book..." required>
+                </div>
+                <div class="field">
+                    <label for="book-author">Author:</label>
+                    <input type="text" id="book-author" name="book-author" placeholder="Author of the book..." required>
+                </div>           
+                <div class="field">
+                    <label for="book-pages">Pages:</label>
+                    <input type="number" id="book-pages" name="book-pages" placeholder="Enter number of pages..." required>
+                </div>
+                <div class="field">
+                    <legend>Read status:</legend>
+                    <div class="radio-btn-container">
+                        <input type="radio" id="book-readStat-no" name="book-readStat" value="no" checked/>
+                        <label for="book-readStat-no">Not read</label>
+                    </div>
+                    <div class="radio-btn-container">
+                        <input type="radio" id="book-readStat-yes" name="book-readStat" value="yes"/>
+                        <label for="book-readStat-yes">Read</label>
+                    </div>
+                </div>                
+                <button type="submit" id="add-book-btn">Submit</button>
+            </form>
+        </div>
+        <div id="content">
+        </div>
+        <div id="footer"></div>
+    </div>    
     <script src="code.js"></script> 
 </body>
-</html
+</html>
